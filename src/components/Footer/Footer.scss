@@ -1,0 +1,26 @@
+footer {
+    position: absolute;
+    top: 10em;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    color: white;
+    min-height: 100vh;
+    width: 10em;
+    justify-content: space-around;
+    justify-items: center;
+}
+
+.activity ul {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 2em;
+    padding: 0;
+}
+
+.copyright {
+    transform: rotate(-90deg);
+    white-space: nowrap;
+}
