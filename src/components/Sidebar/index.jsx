@@ -1,13 +1,13 @@
-import '../Footer/Footer.scss'
+import './Sidebar.scss'
 import meditating from '../../assets/img/meditating.svg'
 import swimming from '../../assets/img/swimming.svg'
 import cycling from '../../assets/img/cycling.svg'
 import weightlifting from '../../assets/img/weightlifting.svg'
 
-function Footer() {
+function Sidebar() {
 
     return (
-        <footer>
+        <aside>
             <nav className='activity'>
                 <ul>
                     <li>
@@ -25,8 +25,8 @@ function Footer() {
                 </ul>
             </nav>
             <p className='copyright'>Copyright, Sportsee 2020</p>
-        </footer>
+        </aside>
     )
 }
 
-export default Footer
+export default Sidebar
