@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Dashboard from './pages/Dashboard';
 import Sidebar from './components/Sidebar'
 import './App.scss';
+import UserMacros from './components/UserMacros';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
       <div className="main">
         <Sidebar/>
         <Dashboard />
+        <UserMacros />
       </div>
     </div>
   );
