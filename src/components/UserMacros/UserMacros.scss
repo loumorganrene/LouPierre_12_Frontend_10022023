@@ -1,0 +1,43 @@
+.macrosList {
+    position: absolute;
+    right: 5rem;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    width: fit-content;
+}
+
+.macrosList li {
+    display: flex;
+    gap: 1rem;
+    background: #FBFBFB;
+    padding: 1.5em;
+    border-radius: 5px;
+}
+
+.macrosList li img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.macrosLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.macrosLabel p {
+    margin: 0;
+    font-weight: 700;
+}
+
+.macrosLabel label {
+    color: #74798C;
+    font-size: .8rem;
+    font-weight: 600;
+}

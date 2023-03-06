@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import {
 	Bar,
 	BarChart,
@@ -13,25 +13,26 @@ import {
 
 function ActivityChart() {
 
-  const [userActivity, setUserActivity] = useState([]);
+//   const [userActivity, setUserActivity] = useState([]);
 
-  useEffect(() => {
-        fetch("http://localhost:3001/user/12/activity")
-            .then(res => res.json())
-            .then(data => setUserActivity(data.data.sessions))
-    }, [])
+//   useEffect(() => {
+//         fetch("http://localhost:3001/user/12/activity")
+//             .then(res => res.json())
+//             .then(data => setUserActivity(data.data.sessions))
+//     }, [])
 
-    const activity = userActivity.map((session, i) => ({
-			date: session.day,
-			day: i + 1,
-			bodyweight: session.kilogram,
-			calories: session.calories,
-		}))
+//     const activity = userActivity.map((session, i) => ({
+// 			date: session.day,
+// 			day: i + 1,
+// 			bodyweight: session.kilogram,
+// 			calories: session.calories,
+// 		}))
 
     return (
       // console.log(userActivity)
-			<ResponsiveContainer width="70%" height={272}>
-				<BarChart barGap={8} data={activity}>
+			<ResponsiveContainer width="70%" height={250}>
+				<BarChart barGap={8}>
+					{/* data={activity} */}
 					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<YAxis
 						dataKey="bodyweight"

@@ -1,13 +1,22 @@
 section {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
+    padding: 2rem 5rem;
+    row-gap: 2rem;
 }
 
-.recharts-tooltip-wrapper {
-    outline: none;
+.chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    max-width: 100%;
 }
 
-.line {
+.chart-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    max-width: 70%;
 }

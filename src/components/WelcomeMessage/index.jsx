@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import '../WelcomeMessage/WelcomeMessage.scss'
 
 function WelcomeMessage() {
 
@@ -14,10 +15,10 @@ function WelcomeMessage() {
   
 
   return (
-    <>
-        <h1>Bonjour <span>{user}</span></h1>
+    <div className="welcomeMessage">
+        <h1>Bonjour <span className="userFirstName">{user}</span></h1>
         <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-    </>
+    </div>
   )
 }
 
