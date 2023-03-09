@@ -1,22 +1,25 @@
-import { AppContextProvider } from './Context';
-import Header from './components/Header'
-import Dashboard from './pages/Dashboard';
+import { UserMainDataProvider } from './context/UserMainData'
+import { UserActivityDataProvider } from './context/UserActivityData'
+import Nav from './components/Nav'
+import Dashboard from './pages/Dashboard'
 import Sidebar from './components/Sidebar'
-import './App.scss';
+import './App.scss'
 
 function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Nav />
       <div className="main">
-        <Sidebar/>
-        <AppContextProvider>
-          <Dashboard />
-        </AppContextProvider>
+        <Sidebar />
+        <UserMainDataProvider>
+          <UserActivityDataProvider>
+            <Dashboard />
+          </UserActivityDataProvider>
+        </UserMainDataProvider>
       </div>
     </div>
-  );
+  )
 }
 
 export default App;

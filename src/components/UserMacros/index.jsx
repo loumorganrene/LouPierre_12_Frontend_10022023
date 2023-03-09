@@ -1,27 +1,17 @@
-import { useState, useEffect } from "react";
 import calorieIcon from "../../assets/icons/calories-icon.svg"
 import proteinIcon from "../../assets/icons/protein-icon.svg"
 import glucideIcon from "../../assets/icons/carbs-icon.svg"
 import lipidIcon from "../../assets/icons/fat-icon.svg"
 import '../UserMacros/UserMacros.scss'
 
-function UserMacros() {
-
-  const [userInfos, setUserInfos] = useState([])
-
-  useEffect(() => {
-    fetch("http://localhost:3001/user/12/")
-      .then(res => res.json())
-      .then(data => setUserInfos(data.data.keyData))
-  }, [])
+function UserMacros({data}) {
 
   const userMacros = {
-    "calories": userInfos.calorieCount,
-    "protein": userInfos.proteinCount,
-    "carbs": userInfos.carbohydrateCount,
-    "lipid": userInfos.lipidCount
+    "calories": data.macros.calorieCount,
+    "protein": data.macros.proteinCount,
+    "carbs": data.macros.carbohydrateCount,
+    "lipid": data.macros.lipidCount
   }
-
 
   return (
     <>

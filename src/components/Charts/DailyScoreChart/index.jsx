@@ -1,26 +1,11 @@
-// import { useState, useEffect } from "react";
-import { useContext } from 'react'
-import { AppContext } from "../../../Context"
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-
-function DailyScoreChart() {
-
-    const Score = () => {
-    const context = useContext(AppContext)
-    return context
-  }
-
-  // const score = [{
-  //   "value": userInfos.todayScore,
-  //   "fill": '#ff0101'
-  // }]
-  console.log(Score())
+function DailyScoreChart({data}) {
 
   return (
       <ResponsiveContainer width="20%" height={250}>
         <RadialBarChart
-          // data={Score}
+          data={data}
           innerRadius={100}
           barSize={10}
           startAngle={90}
@@ -45,11 +30,11 @@ function DailyScoreChart() {
             dominantBaseline="middle"
             className="progress-label"
           >
-            Score
+            Score 
           </text>
         </RadialBarChart>
       </ResponsiveContainer>
-  );
+  )
 }
 
 export default DailyScoreChart

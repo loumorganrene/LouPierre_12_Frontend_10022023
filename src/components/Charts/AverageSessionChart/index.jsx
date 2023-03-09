@@ -2,7 +2,7 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 
-function AverageSessionChart() {
+function AverageSessionChart({data}) {
 
   // const [userAverageSession, setUserAverageSession] = useState([]);
 
@@ -22,7 +22,7 @@ function AverageSessionChart() {
       <ResponsiveContainer width="23%" height={250}>
         <LineChart 
           margin={{ left: -30, bottom: -5 }}>
-            {/* data={averageSession} */}
+            data={data}
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />

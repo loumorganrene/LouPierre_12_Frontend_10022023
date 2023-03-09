@@ -1,29 +1,13 @@
 import '../Header/Header.scss'
-import logo from '../../assets/img/logo.svg'
 
-function Header() {
-
-    return (
-        <header>
-            <img src={logo} alt="SportSee" />
-            <nav className='navigation'>
-                <ul>
-                    <li>
-                            Accueil
-                    </li>
-                    <li>
-                            Profil
-                    </li>
-                    <li>
-                            Réglage
-                    </li>
-                    <li>
-                            Communauté
-                    </li>
-                </ul>
-            </nav>
-        </header>
-    )
+function Header({data}) {
+  
+  return (
+    <div className="welcomeMessage">
+        <h1>Bonjour <span className="userFirstName">{data}</span></h1>
+        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+    </div>
+  )
 }
 
 export default Header
