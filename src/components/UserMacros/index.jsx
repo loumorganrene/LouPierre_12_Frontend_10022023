@@ -4,13 +4,13 @@ import glucideIcon from "../../assets/icons/carbs-icon.svg"
 import lipidIcon from "../../assets/icons/fat-icon.svg"
 import '../UserMacros/UserMacros.scss'
 
-function UserMacros({data}) {
+function UserMacros({macros}) {
 
   const userMacros = {
-    "calories": data.macros.calorieCount,
-    "protein": data.macros.proteinCount,
-    "carbs": data.macros.carbohydrateCount,
-    "lipid": data.macros.lipidCount
+    "calories": macros.macros.calorieCount,
+    "protein": macros.macros.proteinCount,
+    "carbs": macros.macros.carbohydrateCount,
+    "lipid": macros.macros.lipidCount
   }
 
   return (

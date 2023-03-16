@@ -1,11 +1,11 @@
 import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-function DailyScoreChart({data}) {
+function DailyScoreChart({ score }) {
 
   return (
       <ResponsiveContainer width="20%" height={250}>
         <RadialBarChart
-          data={data}
+          data={[score]}
           innerRadius={100}
           barSize={10}
           startAngle={90}

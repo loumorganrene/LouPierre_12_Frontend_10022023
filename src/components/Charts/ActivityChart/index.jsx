@@ -10,21 +10,20 @@ import {
 } from 'recharts';
 
 
-function ActivityChart({data}) {
+function ActivityChart({ sessions }) {
 
-	//     const activity = data.map((session, i) => ({
-	// 		"date": session.day,
-	// 		"day": i + 1,
-	// 		"bodyweight": session.kilogram,
-	// 		"calories": session.calories,
-	// 	}))
+	    const activity = sessions.map((session, i) => ({
+			"date": session.day,
+			"day": i + 1,
+			"bodyweight": session.kilogram,
+			"calories": session.calories,
+		}))
 
-    // console.log(activity)
 	
     return (
 			<ResponsiveContainer width="70%" height={250}>
-				<BarChart barGap={8}>
-					{/* data={data} */}
+				<BarChart barGap={8}
+					data={activity}>
 					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<YAxis
 						dataKey="bodyweight"

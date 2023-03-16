@@ -2,35 +2,38 @@ import { createContext, useState, useEffect } from "react"
 
 export const UserMainDataContext = createContext()
 
-const userId = 12 || 18
-export const BASE_URL = `http://localhost:3001/user/${userId}`
-
-
-export const UserMainDataProvider = ({ children }) => {
-    const [profil, setProfil] = useState({})
-    const [todayScore, setTodayScore] = useState({})
-    const [macros, setMacros] = useState({})
+export const UserMainDataProvider = ({ children, dataSource }) => {
+    const [profil, setProfil] = useState(null)
+    const [todayScore, setTodayScore] = useState(null)
+    const [macros, setMacros] = useState(null)
+    const [sessions, setSessions] = useState(null)
+    const [average, setAverage] = useState(null)
+    const [performance, setPerformance] = useState(null)
     
     useEffect(() => {
-        fetch(`${BASE_URL}`)
-            .then(res => res.json())
-            .then(data => setProfil(data.data.userInfos))
-    }, [])
+        dataSource.getMainData()
+        .then(user => setProfil(user.userInfos))
 
-        useEffect(() => {
-        fetch(`${BASE_URL}`)
-            .then(res => res.json())
-            .then(data => setTodayScore(data.data.todayScore))
-    }, [])
+        dataSource.getMainData()
+        .then(user => setTodayScore({ value: user.todayScore, fill: "#FF0000" }))
 
-        useEffect(() => {
-        fetch(`${BASE_URL}`)
-            .then(res => res.json())
-            .then(data => setMacros(data.data.keyData))
-    }, [])
+        dataSource.getMainData()
+        .then(user => setMacros(user.keyData))
+
+        dataSource.getActivityData()
+        .then(user => setSessions(user.sessions))
+
+        dataSource.getAverageSessionData()
+        .then(user => setAverage(user.sessions))
+
+        dataSource.getPerformanceData()
+        .then(user => setPerformance(user.data))
+
+    }, [dataSource])
+
 
     return (
-        <UserMainDataContext.Provider value={{ profil, todayScore, macros }}>
+        <UserMainDataContext.Provider value={{ profil, todayScore, macros, sessions, average, performance }}>
             {children}
         </UserMainDataContext.Provider>
     )

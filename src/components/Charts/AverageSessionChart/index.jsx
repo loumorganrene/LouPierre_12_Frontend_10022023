@@ -2,27 +2,19 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 
-function AverageSessionChart({data}) {
+function AverageSessionChart({averageSessions}) {
 
-  // const [userAverageSession, setUserAverageSession] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:3001/user/12/average-sessions")
-  //     .then(res => res.json())
-  //     .then(data => setUserAverageSession(data.data.sessions))
-  // }, [])
-
-  // const averageSession = userAverageSession.map((session) => ({
-  //   day: session.day,
-  //   duration: session.sessionLength,
-  // }))
+  const sessionInfos = averageSessions.map((session) => ({
+    day: session.day,
+    duration: session.sessionLength
+  }))
 
   return (
     // console.log(userActivity)
       <ResponsiveContainer width="23%" height={250}>
         <LineChart 
-          margin={{ left: -30, bottom: -5 }}>
-            data={data}
+          margin={{ left: -30, bottom: -5 }}
+            data={sessionInfos}>
           <XAxis dataKey="day" />
           <YAxis />
           <Tooltip />

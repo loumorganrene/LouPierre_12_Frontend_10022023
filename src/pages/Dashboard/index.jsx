@@ -7,23 +7,22 @@ import DailyScoreChart from "../../components/Charts/DailyScoreChart"
 import Header from "../../components/Header"
 import UserMacros from '../../components/UserMacros'
 import '../Dashboard/Dashboard.scss'
-import { UserActivityDataContext } from "../../context/UserActivityData"
 
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)
-    const userActivity = useContext(UserActivityDataContext)
+    console.log(user)
 
     return (
         <section>
-            <Header data={user.profil.firstName} />
+            {user.profil && <Header data={user.profil.firstName} />}
             <div className="chart-wrapper">
-                <UserMacros data={user}/>
-                    <ActivityChart data={userActivity} />
+                {user.macros && <UserMacros macros={user}/>}
+                    {user.sessions && <ActivityChart sessions={user.sessions} />}
                 <div className="chart-container">
-                    <AverageSessionChart />
-                    <PerformanceChart />
-                    <DailyScoreChart data={user.todayScore} />
+                    {user.average && <AverageSessionChart averageSessions={user.average} />}
+                    {user.performance && <PerformanceChart performance={user.performance} />}
+                    {user.todayScore !== null && <DailyScoreChart score={user.todayScore} />}
                 </div>
             </div>
         </section>
