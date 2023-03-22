@@ -1,13 +1,6 @@
 const BASE_URL = `http://localhost:3001/user/12`
 
 export default class ApiFetcher {
-    /**
-     * 
-     * @param {number} id 
-     */
-    // constructor(id) {
-    //     this._id = id
-    // }
 
     async getMainData() {
 

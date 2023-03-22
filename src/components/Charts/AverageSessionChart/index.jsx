@@ -1,35 +1,37 @@
-// import { useState, useEffect } from "react";
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
+import '../AverageSessionChart/AverageSession.scss'
 
-
-function AverageSessionChart({averageSessions}) {
-
+function AverageSessionChart({ averageSessions }) {
+  const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
   const sessionInfos = averageSessions.map((session) => ({
-    day: session.day,
+    day: days[session.day - 1],
     duration: session.sessionLength
   }))
 
+  const renderLegend = () => <p className='average-session--label'>Durée moyenne des sessions</p>
+
   return (
-    // console.log(userActivity)
-      <ResponsiveContainer width="23%" height={250}>
-        <LineChart 
-          margin={{ left: -30, bottom: -5 }}
-            data={sessionInfos}>
-          <XAxis dataKey="day" />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="duration" stroke="#ff0101" />
-          <text
-            x={200 / 2}
-            y={33 / 2}
-            textAnchor="middle"
-            dominantBaseline="middle"
-            className="progress-label"
-          >
-            Session Duration
-          </text>
-        </LineChart>
-      </ResponsiveContainer>
+    <ResponsiveContainer width={268} height={268}>
+      <LineChart
+        style={{ backgroundColor: '#FF0000', borderRadius: "5px", padding: "1rem" }}
+        margin={false}
+        data={sessionInfos}>
+        <CartesianGrid vertical={false} horizontal={false} />
+        <XAxis dataKey="day" padding={{ left: 4, right: 0 }} tickLine={false} axisLine={false} tickMargin={10} tick={{ fill: 'white' }} />
+        <YAxis hide={true} />
+        <Tooltip
+          itemStyle={{ color: "black", fontSize: "1rem", lineHeight: "24px" }}
+          wrapperStyle={{
+            outline: 'none'
+          }}
+          labelFormatter={() => ''}
+          formatter={(value) => ['min', value]}
+          separator=" "
+        />
+        <Line type="monotone" dataKey="duration" stroke="white" dot={false} isAnimationActive={false} />
+        <Legend content={renderLegend} verticalAlign="top" />
+      </LineChart>
+    </ResponsiveContainer>
   )
 }
 

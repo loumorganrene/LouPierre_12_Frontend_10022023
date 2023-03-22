@@ -11,7 +11,6 @@ import {
 
 
 function ActivityChart({ sessions }) {
-
 	    const activity = sessions.map((session, i) => ({
 			"date": session.day,
 			"day": i + 1,
@@ -21,13 +20,18 @@ function ActivityChart({ sessions }) {
 
 	
     return (
-			<ResponsiveContainer width="70%" height={250}>
-				<BarChart barGap={8}
-					data={activity}>
+			<ResponsiveContainer width={"97%"} height={268}>
+				<BarChart 
+					barGap={8}
+					data={activity}
+					style={{backgroundColor: "#FBFBFB", 
+					borderRadius: "5px", padding: "1rem"}}
+					>
 					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<YAxis
 						dataKey="bodyweight"
 						tickLine={false}
+						axisLine={false}
 						tickCount={3}
 						orientation="right"
 						yAxisId="right"
@@ -42,7 +46,8 @@ function ActivityChart({ sessions }) {
 						domain={['dataMin - 100', 'dataMax + 20']}
 						hide
 					/>
-					<XAxis type="category" dataKey="day" tickLine={false} />
+					<XAxis type="category" dataKey="day" 
+					tickLine={false} tickMargin={15} />
 					<Tooltip
 						cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
 						offset={20}
@@ -55,7 +60,7 @@ function ActivityChart({ sessions }) {
 							outline: 'none',
 						}}
 						itemStyle={{
-							fontSize: '7px',
+							fontSize: '1rem',
 							color: '#fff',
 							lineHeight: '24px',
 						}}
@@ -79,6 +84,7 @@ function ActivityChart({ sessions }) {
 						fill="#000"
 						radius={[10, 10, 0, 0]}
 						yAxisId="right"
+						isAnimationActive={false}
 					/>
 					<Bar
 						barSize={7}
@@ -88,6 +94,7 @@ function ActivityChart({ sessions }) {
 						fill="#ff0101"
 						radius={[10, 10, 0, 0]}
 						yAxisId="left"
+						isAnimationActive={false}
 					/>
 				</BarChart>
 			</ResponsiveContainer>

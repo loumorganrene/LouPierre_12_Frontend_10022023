@@ -15,7 +15,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
         .then(user => setProfil(user.userInfos))
 
         dataSource.getMainData()
-        .then(user => setTodayScore({ value: user.todayScore, fill: "#FF0000" }))
+        .then(user => setTodayScore({ value: (user.todayScore*100), fill: "#FF0000" }))
 
         dataSource.getMainData()
         .then(user => setMacros(user.keyData))
@@ -27,10 +27,12 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
         .then(user => setAverage(user.sessions))
 
         dataSource.getPerformanceData()
-        .then(user => setPerformance(user.data))
+        .then(user => {
+            console.log({performance: user});
+            setPerformance(user)
+        })
 
     }, [dataSource])
-
 
     return (
         <UserMainDataContext.Provider value={{ profil, todayScore, macros, sessions, average, performance }}>

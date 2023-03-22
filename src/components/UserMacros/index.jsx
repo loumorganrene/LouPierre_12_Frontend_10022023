@@ -15,7 +15,7 @@ function UserMacros({macros}) {
 
   return (
     <>
-      <ul className="macrosList">
+      <ul className="macrosList--container">
         <li>
           <img src={calorieIcon} alt="calorie count icon" />
           <div className="macrosLabel">
