@@ -9,24 +9,24 @@ import {
 	YAxis,
 } from 'recharts';
 
+import '../ActivityChart/ActivityChart.scss'
+
 
 function ActivityChart({ sessions }) {
-	    const activity = sessions.map((session, i) => ({
-			"date": session.day,
-			"day": i + 1,
-			"bodyweight": session.kilogram,
-			"calories": session.calories,
-		}))
+	const activity = sessions.map((session, i) => ({
+		"date": session.day,
+		"day": i + 1,
+		"bodyweight": session.kilogram,
+		"calories": session.calories,
+	}))
 
-	
-    return (
-			<ResponsiveContainer width={"97%"} height={268}>
-				<BarChart 
+	return (
+		<div className="backgroundActivity">
+			<ResponsiveContainer width="100%" height="100%">
+				<BarChart
 					barGap={8}
 					data={activity}
-					style={{backgroundColor: "#FBFBFB", 
-					borderRadius: "5px", padding: "1rem"}}
-					>
+				>
 					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<YAxis
 						dataKey="bodyweight"
@@ -35,7 +35,7 @@ function ActivityChart({ sessions }) {
 						tickCount={3}
 						orientation="right"
 						yAxisId="right"
-						domain={['dataMin - 2', 'dataMax + 5']}
+						domain={['dataMin - 10', 'dataMax + 5']}
 					/>
 					<YAxis
 						dataKey="calories"
@@ -46,9 +46,10 @@ function ActivityChart({ sessions }) {
 						domain={['dataMin - 100', 'dataMax + 20']}
 						hide
 					/>
-					<XAxis type="category" dataKey="day" 
-					tickLine={false} tickMargin={15} />
+					<XAxis type="category" dataKey="day"
+						tickLine={false} tickMargin={15} />
 					<Tooltip
+						isAnimationActive={false}
 						cursor={{ fill: '#C4C4C4', fillOpacity: '50%' }}
 						offset={20}
 						contentStyle={{
@@ -76,12 +77,18 @@ function ActivityChart({ sessions }) {
 						verticalAlign="top"
 						iconSize={8}
 					/>
+					<text
+						className='activity--label'
+						y="6%"
+					>
+						Activité quotidienne
+					</text>
 					<Bar
 						barSize={7}
 						name="Poids (kg)"
 						unit="kg"
 						dataKey="bodyweight"
-						fill="#000"
+						fill="black"
 						radius={[10, 10, 0, 0]}
 						yAxisId="right"
 						isAnimationActive={false}
@@ -91,14 +98,15 @@ function ActivityChart({ sessions }) {
 						name="Calories brûlées (kCal)"
 						unit="kCal"
 						dataKey="calories"
-						fill="#ff0101"
+						fill="var(--primary-clr)"
 						radius={[10, 10, 0, 0]}
 						yAxisId="left"
 						isAnimationActive={false}
 					/>
 				</BarChart>
 			</ResponsiveContainer>
-  )
+		</div>
+	)
 }
 
 export default ActivityChart

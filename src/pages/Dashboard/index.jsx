@@ -30,11 +30,11 @@ function Dashboard() {
         // </section>
         <section>
             {user.profil && <Header className="welcomeMessage" data={user.profil.firstName} />}
-            <div class="mainContent">
+            <div className="mainContent">
                 {user.macros && <UserMacros className="macrosList--container" macros={user} />}
-                <div class="charts--container">
+                <div className="charts--container">
                     {user.sessions && <ActivityChart className="activityChart" sessions={user.sessions} />}
-                    <div class="charts--wrapper">
+                    <div className="charts--wrapper">
                         {user.average && <AverageSessionChart averageSessions={user.average} />}
                         {user.performance && <PerformanceChart performance={user.performance} />}
                         {user.todayScore !== null && <DailyScoreChart score={user.todayScore} />}

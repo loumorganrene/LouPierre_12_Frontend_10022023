@@ -1,96 +1,32 @@
-section {
-    display: grid;
-    // grid-template-columns: 1fr 1fr 1fr;
-    // grid-template-rows: 0.3fr 1.7fr 1fr;
-    // gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "welcomeMessage welcomeMessage welcomeMessage"
-        "mainContent mainContent mainContent"
-        "mainContent mainContent mainContent";
-    padding: 4rem 8rem;
-}
-
-.welcomeMessage {
-    grid-area: welcomeMessage;
-    margin-bottom: 2rem;
-}
-
 .mainContent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 5rem;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "charts--container macrosList--container"
-        "charts--container macrosList--container";
-    grid-area: mainContent;
-}
-
-.macrosList--container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 2rem 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "."
-        "."
-        "."
-        ".";
-    grid-area: macrosList--container;
-    list-style-type: none;
-    list-style: none;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
     margin: 0;
     padding: 0;
+    gap: 5rem;
+    height: fit-content;
+
+    @media (max-width: 1199.98px) {
+        gap: 2rem;
+    }
 }
 
 .charts--container {
-    display: grid;
-    grid-template-rows: 0.5fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 4rem 0px;
-    grid-auto-flow: row;
-    grid-area: charts--container;
-}
-
-.activityChart {
-    grid-area: activityChart;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5rem;
+    width: calc(70vw - 7em);
+    height: fit-content;
 }
 
 .charts--wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 4rem;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". . .";
-    // grid-area: 2 / 1 / 3 / 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: fit-content;
+
+        @media (max-width: 1199.98px) {
+                max-width: 600px;
+            }
 }
-
-
-// section {
-//     display: flex;
-//     flex-direction: column;
-//     height: 100%;
-//     width: 100%;
-//     padding: 2rem 5rem;
-//     row-gap: 2rem;
-// }
-
-// .chart-wrapper {
-//     display: flex;
-//     flex-direction: column;
-//     row-gap: 5rem;
-//     max-width: 100%;
-// }
-
-// .chart-container {
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-between;
-//     max-width: 70%;
-// }

@@ -1,4 +1,4 @@
-// import { useState, useEffect } from "react";
+import '../PerformanceChart/Performance.scss'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 
@@ -19,17 +19,25 @@ function PerformanceChart({ performance }) {
     
 console.log(performanceFr)
   return (
-      <ResponsiveContainer width={268} height={268}>
-        <RadarChart 
-          style={{backgroundColor: 'black', borderRadius: "5px", padding: "1rem"}}
-          outerRadius={65}
-          isAnimationActive={false}
-          data={performanceFr}>
-          <PolarGrid radialLines={false}/>
-          <PolarAngleAxis dataKey="kind" />
-          <Radar  name="value" dataKey="value" fill="#ff0101" fillOpacity={0.6} />
-        </RadarChart>
-      </ResponsiveContainer>
+      <div className="backgroundPerformance">
+        <ResponsiveContainer width="100%" height="100%">
+          <RadarChart
+              cx="49%" 
+              cy="50%" 
+              outerRadius="50%"
+              data={performanceFr}>
+            <PolarGrid radialLines={false}/>
+            <PolarAngleAxis dataKey="kind"/>
+            <Radar  
+                name="value" 
+                dataKey="value" 
+                fill="var(--primary-clr)" 
+                fillOpacity={0.6} 
+                isAnimationActive={false} 
+            />
+          </RadarChart>
+        </ResponsiveContainer>
+      </div>
   )
 }
 

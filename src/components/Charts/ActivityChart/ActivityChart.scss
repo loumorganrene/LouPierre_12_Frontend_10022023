@@ -1,0 +1,19 @@
+.backgroundActivity {
+    background-color: var(--secondary-clr);
+    border-radius: 10px;
+    height: 368px;
+    padding: 2rem;
+
+    .activity--label {
+        font-size: min(1.2em, 1.2vw);
+        font-weight: 600;
+    }
+
+    .recharts-default-legend {
+        font-size: min(1em, 1.2vw);
+    }
+
+    @media (max-width: 1199.98px) {
+        max-width: 600px;
+    }
+}

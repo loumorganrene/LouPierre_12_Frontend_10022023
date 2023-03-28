@@ -1,10 +1,35 @@
-.average-session--label {
-    position: absolute;
-    text-align: left;
-    color: white;
-    opacity: 0.6;
-    margin: 1rem;
-    padding: 0;
-    inline-size: 140px;
-    overflow-wrap: break-word;
+.backgroundAverageSession {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    background-color: var(--primary-clr);
+    border-radius: 10px;
+    padding: 1rem;
+    height: 320px;
+
+    .average-session--label {
+        position: absolute;
+        text-align: left;
+        color: white;
+        opacity: 0.6;
+        margin: 1rem;
+        padding: 0;
+        left: 0;
+        inline-size: 140px;
+        overflow-wrap: break-word;
+    }
+
+}
+
+@media (max-width: 1199.98px) {
+    .backgroundAverageSession{
+        max-width: 168px;
+        height: 168px;
+    }
+
+    .average-session--label {
+        top: -1rem;
+        left: -1rem;
+        font-size: 1.1vw;
+    }
 }

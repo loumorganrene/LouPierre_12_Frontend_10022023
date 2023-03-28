@@ -1,0 +1,18 @@
+.backgroundPerformance {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    background-color: black;
+    border-radius: 10px;
+    padding: 1rem;
+    height: 320px;
+
+        @media (max-width: 1199.98px) {
+                max-width: 168px;
+                height: 168px;
+                padding: 0;
+                .recharts-text {
+                    font-size: .9vw;
+                }
+            }
+}

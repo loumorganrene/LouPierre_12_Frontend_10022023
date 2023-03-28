@@ -1,3 +1,12 @@
+:root {
+  --primary-clr: #FF0000;
+  --secondary-clr: #FBFBFB;
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
