@@ -2,13 +2,9 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import '../AverageSessionChart/AverageSession.scss'
 
 function AverageSessionChart({ averageSessions }) {
-  const days = ['L', 'M', 'M', 'J', 'V', 'S', 'D']
-  const sessionInfos = averageSessions.map((session) => ({
-    day: days[session.day - 1],
-    duration: session.sessionLength
-  }))
 
-  const renderLegend = () => <p className='average-session--label'>Durée moyenne des sessions</p>
+  const renderLegend = () => 
+      <p className='average-session--label'>Durée moyenne des sessions</p>
   
   return (
     <div className="backgroundAverageSession">
@@ -18,7 +14,7 @@ function AverageSessionChart({ averageSessions }) {
       >
         <LineChart
             margin={false}
-            data={sessionInfos}
+            data={averageSessions}
         >
           <CartesianGrid vertical={false} horizontal={false} />
           <XAxis 

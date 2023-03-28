@@ -6,41 +6,34 @@ import '../UserMacros/UserMacros.scss'
 
 function UserMacros({macros}) {
 
-  const userMacros = {
-    "calories": macros.macros.calorieCount,
-    "protein": macros.macros.proteinCount,
-    "carbs": macros.macros.carbohydrateCount,
-    "lipid": macros.macros.lipidCount
-  }
-
   return (
     <>
       <ul className="macrosList--container">
         <li>
           <img src={calorieIcon} alt="calorie count icon" />
           <div className="macrosLabel">
-            <p>{userMacros.calories} kCal</p>
+            <p>{macros.calories} kCal</p>
             <label>Calories</label>
           </div>
         </li>
         <li>
           <img src={proteinIcon} alt="protein count icon" />
           <div className="macrosLabel">
-            <p>{userMacros.protein}g</p>
+            <p>{macros.protein}g</p>
             <label>Proteines</label>
           </div>
         </li>
         <li>
           <img src={glucideIcon} alt="carbs count icon" />
           <div className="macrosLabel">
-            <p>{userMacros.carbs}g</p>
+            <p>{macros.carbs}g</p>
             <label>Glucides</label>
           </div>
         </li>
         <li>
           <img src={lipidIcon} alt="lipid count icon" />
           <div className="macrosLabel">
-            <p>{userMacros.lipid}g</p>
+            <p>{macros.lipid}g</p>
             <label>Lipides</label>
           </div>
         </li>

@@ -4,20 +4,6 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 
 function PerformanceChart({ performance }) {
 
-  const frenchTranslation = {
-			cardio: 'Cardio',
-			energy: 'Energie',
-			endurance: 'Endurance',
-			strength: 'Force',
-			speed: 'Vitesse',
-			intensity: 'Intensité',
-  }
-  const performanceFr = performance.data.map((item) => ({
-			value: item.value,
-			kind: frenchTranslation[performance.kind[item.kind]],
-		}))
-    
-console.log(performanceFr)
   return (
       <div className="backgroundPerformance">
         <ResponsiveContainer width="100%" height="100%">
@@ -25,7 +11,7 @@ console.log(performanceFr)
               cx="49%" 
               cy="50%" 
               outerRadius="50%"
-              data={performanceFr}>
+              data={performance}>
             <PolarGrid radialLines={false}/>
             <PolarAngleAxis dataKey="kind"/>
             <Radar  

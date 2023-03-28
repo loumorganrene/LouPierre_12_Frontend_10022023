@@ -13,19 +13,13 @@ import '../ActivityChart/ActivityChart.scss'
 
 
 function ActivityChart({ sessions }) {
-	const activity = sessions.map((session, i) => ({
-		"date": session.day,
-		"day": i + 1,
-		"bodyweight": session.kilogram,
-		"calories": session.calories,
-	}))
 
 	return (
 		<div className="backgroundActivity">
 			<ResponsiveContainer width="100%" height="100%">
 				<BarChart
 					barGap={8}
-					data={activity}
+					data={sessions}
 				>
 					<CartesianGrid vertical={false} strokeDasharray="3 3" />
 					<YAxis
