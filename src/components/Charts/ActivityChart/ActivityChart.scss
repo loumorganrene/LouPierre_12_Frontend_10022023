@@ -3,14 +3,16 @@
     border-radius: 10px;
     height: 368px;
     padding: 2rem;
+    width: 60vw;
+    // max-width: 100%;
 
     .activity--label {
-        font-size: min(1.2em, 1.2vw);
+        font-size: min(1.2rem, 1.2vw);
         font-weight: 600;
     }
 
     .recharts-default-legend {
-        font-size: min(1em, 1.2vw);
+        font-size: min(1rem, 1.2vw);
     }
 
     @media (max-width: 1199.98px) {

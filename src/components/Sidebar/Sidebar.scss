@@ -9,31 +9,31 @@ aside {
     justify-items: center;
     text-align: center;
 
-    @media (max-width: 1024px) {
-        width: 5em;
+    .activity ul {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        list-style-type: none;
+        gap: 1em;
+        padding: 0;
     }
-}
 
-.activity ul {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    list-style-type: none;
-    gap: 1em;
-    padding: 0;
+    .copyright {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+    }
 
     @media (max-width: 1199.98px) {
-        img {
-            width: 60%;
+        width: 5rem;
+
+        .activity ul {
+            img {
+                width: 60%;
+            }
         }
-    }
-}
 
-.copyright {
-    transform: rotate(-90deg);
-    white-space: nowrap;
-
-    @media (max-width: 1199.98px) {
-        font-size: 1rem;
+        .copyright {
+            font-size: .8rem;
+        }
     }
 }
