@@ -12,7 +12,7 @@ export default class ApiFetcher {
      * @async
      * @function getMainData
      * @param {string} url - URL of the API.
-     * @returns {Promise<object>} Basic user informations.
+     * @returns {Promise<object>} List of informations about user profil.
      */
     async getMainData() {
 
@@ -25,7 +25,7 @@ export default class ApiFetcher {
      * @async
      * @function getActivityData
      * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user profil.
+     * @returns {Promise<object>} List of informations about user metabolism.
      */
     async getActivityData() {
 
@@ -38,7 +38,7 @@ export default class ApiFetcher {
      * @async
      * @function getAverageSessionData
      * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user average sessions duration.
+     * @returns {Promise<object>} List of informations about user sessions duration.
      */
     async getAverageSessionData() {
 

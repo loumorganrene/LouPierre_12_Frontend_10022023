@@ -7,8 +7,9 @@ export default class MockFetcher {
      * Get basic user data.
      * @async
      * @function getMainData
-     * @param {string} element - ID of the user.
-     * @returns {Promise<object>} Basic user informations.
+     * @param {Object[]} element - List of literal objects.
+     * @param {number} element[].id - ID to filter the data by user.
+     * @returns {object} List of information about user profil.
      */
     async getMainData() {
 
@@ -18,8 +19,9 @@ export default class MockFetcher {
      * Get user activity data.
      * @async
      * @function getActivityData
-     * @param {string} element - ID of the user.
-     * @returns {Promise<object>} List of informations about user profil.
+     * @param {Object[]} element - List of literal objects.
+     * @param {number} element[].userId - ID to filter the data by user.
+     * @returns {object} List of informations about user metabolism.
      */
     async getActivityData() {
 
@@ -29,8 +31,9 @@ export default class MockFetcher {
      * Get user sessions duration data.
      * @async
      * @function getAverageSessionData
-     * @param {string} element - ID of the user.
-     * @returns {Promise<object>} List of informations about user average sessions duration.
+     * @param {Object[]} element - List of literal objects.
+     * @param {number} element[].userId - ID to filter the data by user.
+     * @returns {object} List of informations about user sessions duration.
      */
     async getAverageSessionData() {
 
@@ -40,8 +43,9 @@ export default class MockFetcher {
      * Get user performance data.
      * @async
      * @function getPerformanceData
-     * @param {string} element - ID of the user.
-     * @returns {Promise<object>} List of informations about user performances.
+     * @param {Object[]} element - List of literal objects.
+     * @param {number} element[].userId - ID to filter the data by user.
+     * @returns {object} List of informations about user performances.
      */
     async getPerformanceData() {
 
