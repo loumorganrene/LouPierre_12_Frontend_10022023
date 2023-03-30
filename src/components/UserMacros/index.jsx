@@ -3,9 +3,9 @@ import proteinIcon from "../../assets/icons/protein-icon.svg"
 import glucideIcon from "../../assets/icons/carbs-icon.svg"
 import lipidIcon from "../../assets/icons/fat-icon.svg"
 import '../UserMacros/UserMacros.scss'
+import PropTypes from 'prop-types'
 
-function UserMacros({macros}) {
-
+function UserMacros({ macros }) {
   return (
     <>
       <ul className="macrosList--container">
@@ -40,6 +40,15 @@ function UserMacros({macros}) {
       </ul>
     </>
   )
+}
+
+UserMacros.propTypes = {
+  macros: PropTypes.shape({
+    calories: PropTypes.number.isRequired,
+    protein: PropTypes.number.isRequired,
+    carbs: PropTypes.number.isRequired,
+    lipid: PropTypes.number.isRequired,
+  })
 }
 
 export default UserMacros

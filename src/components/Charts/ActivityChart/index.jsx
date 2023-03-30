@@ -1,16 +1,6 @@
-import {
-	Bar,
-	BarChart,
-	CartesianGrid,
-	Legend,
-	ResponsiveContainer,
-	Tooltip,
-	XAxis,
-	YAxis,
-} from 'recharts';
-
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, } from 'recharts';
 import '../ActivityChart/ActivityChart.scss'
-
+import PropTypes from 'prop-types'
 
 function ActivityChart({ sessions }) {
 
@@ -101,6 +91,15 @@ function ActivityChart({ sessions }) {
 			</ResponsiveContainer>
 		</div>
 	)
+}
+
+ActivityChart.propTypes = {
+	sessions: PropTypes.arrayOf(PropTypes.shape({
+		date: PropTypes.string.isRequired,
+		day: PropTypes.number.isRequired,
+		bodyweight: PropTypes.number.isRequired,
+		calories: PropTypes.number.isRequired
+	})).isRequired
 }
 
 export default ActivityChart

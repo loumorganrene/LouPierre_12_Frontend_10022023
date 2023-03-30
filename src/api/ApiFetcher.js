@@ -4,13 +4,20 @@ export default class ApiFetcher {
 
     async getMainData() {
 
+        /**
+         * TODO: 
+         * 
+         * 1. Mettre les proptypes
+         * 2. Gérer les erreurs de l'API
+         * 3. Dynamiser l'ID utilisateur via la route
+         */
         return fetch(`${BASE_URL}`)
             .then((response) => response.json())
             .then((r => r.data))
     }
 
     async getActivityData() {
-        
+
         return fetch(`${BASE_URL}/activity`)
             .then((response) => response.json())
             .then((r => r.data))

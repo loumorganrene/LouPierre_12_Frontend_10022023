@@ -12,9 +12,13 @@ function Dashboard() {
 
     const user = useContext(UserMainDataContext)
 
+    if (!user) {
+        return <h1>Utilisateur non trouvé</h1>
+    }
+
     return (
         <section>
-            {user.profil && <Header className="welcomeMessage" data={user.profil.firstName} />}
+            {user.profil && <Header className="welcomeMessage" username={user.profil.firstName} />}
             <div className="mainContent">
                 {user.macros && <UserMacros className="macrosList--container" macros={user.macros} />}
                 <div className="charts--container">

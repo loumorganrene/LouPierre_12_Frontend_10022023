@@ -3,7 +3,7 @@ import Nav from './components/Nav'
 import Dashboard from './pages/Dashboard'
 import Sidebar from './components/Sidebar'
 import './App.scss'
-// import ApiFetcher from './api/ApiFetcher'
+import ApiFetcher from './api/ApiFetcher'
 import MockFetcher from './api/MockFetcher'
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Nav />
       <div className="main">
         <Sidebar />
-        <UserMainDataProvider dataSource={new MockFetcher()}>
-            <Dashboard />
+        <UserMainDataProvider dataSource={new ApiFetcher() ? new ApiFetcher() : new MockFetcher()}>
+          <Dashboard />
         </UserMainDataProvider>
       </div>
     </div>
