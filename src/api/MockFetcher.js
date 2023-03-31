@@ -6,10 +6,10 @@ export default class MockFetcher {
     /**
      * Get basic user data.
      * @async
-     * @function getMainData
-     * @param {Object[]} element - List of literal objects.
-     * @param {number} element[].id - ID to filter the data by user.
-     * @returns {object} List of information about user profil.
+     * @method getMainData
+     * @param { Array<object> } element - List of literal objects.
+     * @param { number } element.id - ID to filter the data by user.
+     * @returns { Promise<object> } List of information about user profil.
      */
     async getMainData() {
 
@@ -18,10 +18,10 @@ export default class MockFetcher {
     /**
      * Get user activity data.
      * @async
-     * @function getActivityData
-     * @param {Object[]} element - List of literal objects.
-     * @param {number} element[].userId - ID to filter the data by user.
-     * @returns {object} List of informations about user metabolism.
+     * @method getActivityData
+     * @param { Array<object> } element - List of literal objects.
+     * @param { number } element[].userId - ID to filter the data by user.
+     * @returns { Promise<object> } List of informations about user metabolism.
      */
     async getActivityData() {
 
@@ -30,10 +30,10 @@ export default class MockFetcher {
     /**
      * Get user sessions duration data.
      * @async
-     * @function getAverageSessionData
-     * @param {Object[]} element - List of literal objects.
-     * @param {number} element[].userId - ID to filter the data by user.
-     * @returns {object} List of informations about user sessions duration.
+     * @method getAverageSessionData
+     * @param { Array<object> } element - List of literal objects.
+     * @param { number } element[].userId - ID to filter the data by user.
+     * @returns { Promise<object> } List of informations about user sessions duration.
      */
     async getAverageSessionData() {
 
@@ -42,10 +42,10 @@ export default class MockFetcher {
     /**
      * Get user performance data.
      * @async
-     * @function getPerformanceData
-     * @param {Object[]} element - List of literal objects.
-     * @param {number} element[].userId - ID to filter the data by user.
-     * @returns {object} List of informations about user performances.
+     * @method getPerformanceData
+     * @param { Array<object> } element - List of literal objects.
+     * @param { number } element[].userId - ID to filter the data by user.
+     * @returns { Promise<object> } List of informations about user performances.
      */
     async getPerformanceData() {
 

@@ -5,6 +5,15 @@ import lipidIcon from "../../assets/icons/fat-icon.svg"
 import '../UserMacros/UserMacros.scss'
 import PropTypes from 'prop-types'
 
+/**
+ * Component for showing nutritional infos of the user.
+ * @component
+ * @param { object } Object - as a list of macronutrients.
+ * @example
+ * const data = {calories: "1930", protein: "100", carbs: "300", lipid: "60"}
+ * 
+ * <UserMacros macros= {data} />
+ */
 function UserMacros({ macros }) {
   return (
     <>

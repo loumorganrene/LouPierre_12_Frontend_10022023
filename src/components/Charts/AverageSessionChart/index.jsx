@@ -1,7 +1,18 @@
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 import '../AverageSessionChart/AverageSession.scss'
 import PropTypes from 'prop-types'
-
+/**
+ * Component for showing the user's average session's duration line chart.
+ *
+ * @component
+ * @param { object } Object as a list of informations about user sessions duration.
+ * @example
+ * const sessions = [
+ *   {"day": 1, "sessionLength": 30},
+ *   {"day": 2, "sessionLength": 23}
+ * ]
+ * <AverageSessionChart averageSessions={sessions} />
+ */
 function AverageSessionChart({ averageSessions }) {
 
   const renderLegend = () =>

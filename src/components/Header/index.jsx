@@ -1,6 +1,14 @@
 import '../Header/Header.scss'
 import PropTypes from 'prop-types';
-
+/**
+ * Component for showing user's welcome message.
+ * @component
+ * @param {string} username - User's first name.
+ * @example
+ * const user = { firstName: "Paul", lastName: "Petit", age: 23 }
+ * 
+ * <Header username= { user.firstName } />
+ */
 function Header({ username }) {
   return (
     <div className="header">

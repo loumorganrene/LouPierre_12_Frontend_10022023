@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react"
+import PropTypes from 'prop-types'
 
 export const UserMainDataContext = createContext()
 
@@ -66,5 +67,9 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
             {children}
         </UserMainDataContext.Provider>
     )
+}
 
+UserMainDataProvider.propTypes = {
+    children: PropTypes.element.isRequired,
+    dataSource: PropTypes.shape().isRequired
 }

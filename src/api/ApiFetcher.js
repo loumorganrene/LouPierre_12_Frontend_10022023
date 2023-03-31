@@ -4,15 +4,17 @@ const BASE_URL = `http://localhost:3001/user/12`
 //  3. Dynamiser l'ID utilisateur via la route
 
 /**
-* @class Create a data fetcher from an API and returns the data.
-*/
+ * Create a new data fetcher from an API.
+ * @class
+ */
 export default class ApiFetcher {
+
     /**
-     * Get basic user data.
+     * Get user profil data.
      * @async
-     * @function getMainData
-     * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user profil.
+     * @method getMainData
+     * @param { string } url - URL of the API.
+     * @returns { Promise<object> } Promise object as a list of informations about user profil.
      */
     async getMainData() {
 
@@ -23,9 +25,9 @@ export default class ApiFetcher {
     /**
      * Get user activity data.
      * @async
-     * @function getActivityData
-     * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user metabolism.
+     * @method getActivityData
+     * @param { string } url - URL of the API.
+     * @returns { Promise<object> } Promise object as a list of informations about user metabolism.
      */
     async getActivityData() {
 
@@ -36,9 +38,9 @@ export default class ApiFetcher {
     /**
      * Get user sessions duration data.
      * @async
-     * @function getAverageSessionData
-     * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user sessions duration.
+     * @method getAverageSessionData
+     * @param { string } url - URL of the API.
+     * @returns { Promise<object> } Promise object as a list of informations about user sessions duration.
      */
     async getAverageSessionData() {
 
@@ -49,9 +51,9 @@ export default class ApiFetcher {
     /**
      * Get user performance data.
      * @async
-     * @function getPerformanceData
-     * @param {string} url - URL of the API.
-     * @returns {Promise<object>} List of informations about user performances.
+     * @method getPerformanceData
+     * @param { string } url - URL of the API.
+     * @returns { Promise<object> } Promise object as a list of informations about user performances.
      */
     async getPerformanceData() {
 

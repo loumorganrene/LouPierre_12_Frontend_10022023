@@ -1,7 +1,17 @@
 import '../PerformanceChart/Performance.scss'
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import PropTypes from 'prop-types'
-
+/**
+ * Component for showing user's perfomance radar chart.
+ * @component
+ * @example
+ * const data = [
+ * {value: 80, kind: "Cardio"},
+ * {value: 120, kind: "Energie"},
+ * ...]
+ * 
+ * <PerformanceChart score= {data} />
+ */
 function PerformanceChart({ performance }) {
 
   return (

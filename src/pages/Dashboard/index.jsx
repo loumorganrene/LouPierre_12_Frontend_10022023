@@ -16,6 +16,8 @@ function Dashboard() {
         return <h1>Utilisateur non trouvé</h1>
     }
 
+    console.log(user)
+
     return (
         <section>
             {user.profil && <Header className="welcomeMessage" username={user.profil.firstName} />}
