@@ -40,6 +40,7 @@ function AverageSessionChart({ averageSessions }) {
           <YAxis
             hide={true}
             padding={{ top: 6 }}
+            domain={['dataMin - 20', 'dataMax + 50']}
           />
           <Tooltip
             itemStyle={{
