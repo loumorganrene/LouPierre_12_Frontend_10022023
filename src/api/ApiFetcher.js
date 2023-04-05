@@ -1,10 +1,12 @@
 /**
- * Create a new data fetcher from an API.
- * @class
- */
+* Represent a data fetcher from API.
+* @class
+* @classdesc This class represent a data fetcher from API.
+*/
 export default class ApiFetcher {
     /**
-     * @param {number} userId 
+     * Create a new ApiFetcher.
+     * @param { number } userId - The user's id.
      */
     constructor(userId) {
         this._userId = userId
@@ -14,7 +16,6 @@ export default class ApiFetcher {
      * Get user profil data.
      * @async
      * @method getMainData
-     * @param { string } url - URL of the API.
      * @returns { Promise<object> } Promise object as a list of informations about user profil.
      */
     async getMainData() {
@@ -34,7 +35,6 @@ export default class ApiFetcher {
      * Get user activity data.
      * @async
      * @method getActivityData
-     * @param { string } url - URL of the API.
      * @returns { Promise<object> } Promise object as a list of informations about user metabolism.
      */
     async getActivityData() {
@@ -54,7 +54,6 @@ export default class ApiFetcher {
      * Get user sessions duration data.
      * @async
      * @method getAverageSessionData
-     * @param { string } url - URL of the API.
      * @returns { Promise<object> } Promise object as a list of informations about user sessions duration.
      */
     async getAverageSessionData() {
@@ -74,7 +73,6 @@ export default class ApiFetcher {
      * Get user performance data.
      * @async
      * @method getPerformanceData
-     * @param { string } url - URL of the API.
      * @returns { Promise<object> } Promise object as a list of informations about user performances.
      */
     async getPerformanceData() {

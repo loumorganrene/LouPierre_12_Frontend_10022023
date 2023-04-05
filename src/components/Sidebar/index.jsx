@@ -3,7 +3,10 @@ import meditating from '../../assets/img/meditating.svg'
 import swimming from '../../assets/img/swimming.svg'
 import cycling from '../../assets/img/cycling.svg'
 import weightlifting from '../../assets/img/weightlifting.svg'
-
+/**
+ * Component for showing Sidebar.
+ * @component
+ */
 function Sidebar() {
 
     return (

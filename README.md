@@ -22,7 +22,6 @@ Follow the installation instructions below.
 1. Clone this repository.
 2. The `npm install` command will allow you to install the dependencies.
 3. The `npm run start` command will allow you to run the React app.
-4. *(Optional)* The `npm run docs` command will allow you to generate the jsdoc documentation. (It will be located in docs/).
 
 ### 4 Examples of queries
 

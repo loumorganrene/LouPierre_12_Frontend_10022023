@@ -8,7 +8,7 @@ import PropTypes from 'prop-types'
 /**
  * Component for showing nutritional infos of the user.
  * @component
- * @param { object } Object - as a list of macronutrients.
+ * @param { object } macros - List of macronutrients.
  * @example
  * const data = {calories: "1930", protein: "100", carbs: "300", lipid: "60"}
  * 

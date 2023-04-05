@@ -9,6 +9,10 @@ import UserMacros from '../../components/UserMacros'
 import Error from '../../components/Error';
 import '../Dashboard/Dashboard.scss'
 
+/**
+ * Component for showing Dashboard.
+ * @component
+ */
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)

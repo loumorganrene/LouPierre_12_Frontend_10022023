@@ -1,6 +1,9 @@
 import './Nav.scss'
 import logo from '../../assets/img/logo.svg'
-
+/**
+ * Component for showing navigation bar.
+ * @component
+ */
 function Nav() {
 
     return (

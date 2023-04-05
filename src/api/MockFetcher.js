@@ -1,12 +1,14 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../_mocks_/mockData"
 /**
-* Create a data fetcher from mocking data.
+* Represent a data fetcher from mocking data.
 * @class
+* @classdesc This class represent a data fetcher from mocking data.
 */
 export default class MockFetcher {
     /**
-    * @param {number} userId 
-    */
+     * Create a new MockFetcher.
+     * @param { number } userId - The user's id.
+     */
     constructor(userId) {
         this._userId = userId
     }

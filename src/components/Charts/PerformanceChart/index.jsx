@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 /**
  * Component for showing user's perfomance radar chart.
  * @component
+ * @param { object } performance - List of informations about user's performances.
  * @example
  * const data = [
  * {value: 80, kind: "Cardio"},
  * {value: 120, kind: "Energie"},
  * ...]
  * 
- * <PerformanceChart score= {data} />
+ * <PerformanceChart performance= {data} />
  */
 function PerformanceChart({ performance }) {
 

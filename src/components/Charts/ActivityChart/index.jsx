@@ -5,14 +5,14 @@ import PropTypes from 'prop-types'
  * Component for showing the user's activity bar chart.
  *
  * @component
- * @param {object} Object as a list of informations about user metabolism.
+ * @param {object} sessions - List of informations about user metabolism.
  * @example
  * const userActivity = [
- *   {date: "2020-07-01", day: 1, bodyweight: 80, calories: 240},
- *   {date: "2020-07-02", day: 2, bodyweight: 80, calories: 220}
+ *   { date: "2020-07-01", day: 1, bodyweight: 80, calories: 240 },
+ *   { date: "2020-07-02", day: 2, bodyweight: 80, calories: 220 }
  * ]
  *
- * <ActivityChart sessions={userActivity} />
+ * <ActivityChart sessions={ userActivity } />
  */
 function ActivityChart({ sessions }) {
 

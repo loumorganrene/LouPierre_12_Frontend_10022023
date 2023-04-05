@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 /**
  * Component for showing user's perfomance radar chart.
  * @component
- * @param { object } Object - containing user's daily score and bar progression bar color.
+ * @param { object } score - User's daily score and progression bar color hex code.
  * @example
  * const userScore = [{ score: 12, fill: "#FF0000" }]
  * 
