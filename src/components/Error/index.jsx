@@ -1,14 +1,18 @@
-import './Error.css'
+import { useRouteError } from "react-router-dom";
 import ErrorImg from '../../assets/img/404.svg'
+import './Error.css'
 
-function Error() {
+export default function ErrorPage() {
+    const error = useRouteError();
+    console.error(error);
 
     return (
-            <div className="errorMsg">
-                <img src={ErrorImg} alt='404' />
-                <p>Oups! La page que vous demandez n'existe pas.</p>
-            </div>
-    )
+        <div id="error-page" className="errorMsg">
+            <img src={ErrorImg} alt='404' />
+            <p>Oups, cette page n'existe pas.</p>
+            <p>
+                <i>{error.statusText || error.message}</i>
+            </p>
+        </div>
+    );
 }
-
-export default Error

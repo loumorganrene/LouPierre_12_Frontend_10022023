@@ -1,9 +1,15 @@
-const BASE_URL = `http://localhost:3001/user/12`
 /**
  * Create a new data fetcher from an API.
  * @class
  */
 export default class ApiFetcher {
+    /**
+     * @param {number} userId 
+     */
+    constructor(userId) {
+        this._userId = userId
+        this.BASE_URL = `http://localhost:3001/user/${userId}`
+    }
     /**
      * Get user profil data.
      * @async
@@ -13,7 +19,7 @@ export default class ApiFetcher {
      */
     async getMainData() {
         try {
-            const response = await fetch(`${BASE_URL}`)
+            const response = await fetch(`${this.BASE_URL}`)
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`)
             }
@@ -33,7 +39,7 @@ export default class ApiFetcher {
      */
     async getActivityData() {
         try {
-            const response = await fetch(`${BASE_URL}/activity`)
+            const response = await fetch(`${this.BASE_URL}/activity`)
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`)
             }
@@ -53,7 +59,7 @@ export default class ApiFetcher {
      */
     async getAverageSessionData() {
         try {
-            const response = await fetch(`${BASE_URL}/average-sessions`)
+            const response = await fetch(`${this.BASE_URL}/average-sessions`)
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`)
             }
@@ -73,7 +79,7 @@ export default class ApiFetcher {
      */
     async getPerformanceData() {
         try {
-            const response = await fetch(`${BASE_URL}/performance`)
+            const response = await fetch(`${this.BASE_URL}/performance`)
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`)
             }

@@ -1,8 +1,15 @@
 import { USER_MAIN_DATA, USER_ACTIVITY, USER_AVERAGE_SESSIONS, USER_PERFORMANCE } from "../_mocks_/mockData"
 /**
-* @class Create a data fetcher from mocking data and returns the data.
+* Create a data fetcher from mocking data.
+* @class
 */
 export default class MockFetcher {
+    /**
+    * @param {number} userId 
+    */
+    constructor(userId) {
+        this._userId = userId
+    }
     /**
      * Get basic user data.
      * @async
@@ -13,7 +20,7 @@ export default class MockFetcher {
      */
     async getMainData() {
 
-        return USER_MAIN_DATA.find((element) => element.id === 12 | 18)
+        return USER_MAIN_DATA.find((element) => element.id === this._userId)
     }
     /**
      * Get user activity data.
@@ -25,7 +32,7 @@ export default class MockFetcher {
      */
     async getActivityData() {
 
-        return USER_ACTIVITY.find((element) => element.userId === 12 | 18)
+        return USER_ACTIVITY.find((element) => element.userId === this._userId)
     }
     /**
      * Get user sessions duration data.
@@ -37,7 +44,7 @@ export default class MockFetcher {
      */
     async getAverageSessionData() {
 
-        return USER_AVERAGE_SESSIONS.find((element) => element.userId === 12 | 18)
+        return USER_AVERAGE_SESSIONS.find((element) => element.userId === this._userId)
     }
     /**
      * Get user performance data.
@@ -49,7 +56,7 @@ export default class MockFetcher {
      */
     async getPerformanceData() {
 
-        return USER_PERFORMANCE.find((element) => element.userId === 12 | 18)
+        return USER_PERFORMANCE.find((element) => element.userId === this._userId)
     }
 }
 

@@ -17,6 +17,7 @@
     margin: 0 1rem 5rem;
     font-size: 1.4rem;
     text-align: center;
+    color: grey;
 }
 
 .errorMsg .home_link {

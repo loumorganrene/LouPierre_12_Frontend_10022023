@@ -1,35 +1,23 @@
 import { useContext } from "react"
 import { UserMainDataContext } from "../../context/UserMainData"
-import Nav from '../../components/Nav'
-import Sidebar from '../../components/Sidebar'
 import AverageSessionChart from "../../components/Charts/AverageSessionChart"
 import ActivityChart from "../../components/Charts/ActivityChart"
 import PerformanceChart from "../../components/Charts/PerformanceChart"
 import DailyScoreChart from "../../components/Charts/DailyScoreChart"
 import Header from "../../components/Header"
 import UserMacros from '../../components/UserMacros'
+import Error from '../../components/Error';
 import '../Dashboard/Dashboard.scss'
 
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)
 
-    const url = window.location.href.split('/');
-    url.pop();
-    url.push(user.userId);
-    window.history.replaceState(null, null, url.join('/'));
-
     if (!user) {
-        return <h1>Utilisateur non trouvé</h1>
+        return <Error />
     }
 
-    console.log(user)
-
     return (
-        <div className="App">
-            <Nav />
-            <div className="main">
-                <Sidebar />
                 <section>
                     {user.profil && <Header className="welcomeMessage" username={user.profil.firstName} />}
                     <div className="mainContent">
@@ -44,7 +32,6 @@ function Dashboard() {
                         </div>
                     </div>
                 </section>
-            </div></div>
     )
 }
 

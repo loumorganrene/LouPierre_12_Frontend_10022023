@@ -2,7 +2,9 @@ import { createContext, useState, useEffect } from "react"
 import PropTypes from 'prop-types'
 
 export const UserMainDataContext = createContext()
-
+/**
+ * Data adaptator and provider for recharts API component
+ */
 export const UserMainDataProvider = ({ children, dataSource }) => {
     const [userId, setUserId] = useState(null)
     const [profil, setProfil] = useState(null)
