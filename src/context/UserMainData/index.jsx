@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 export const UserMainDataContext = createContext()
 
 export const UserMainDataProvider = ({ children, dataSource }) => {
+    const [userId, setUserId] = useState(null)
     const [profil, setProfil] = useState(null)
     const [todayScore, setTodayScore] = useState(null)
     const [macros, setMacros] = useState(null)
@@ -13,10 +14,13 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
 
     useEffect(() => {
         dataSource.getMainData()
+            .then(user => setUserId(user.id))
+
+        dataSource.getMainData()
             .then(user => setProfil(user.userInfos))
 
         dataSource.getMainData()
-            .then(user => setTodayScore({ value: (user.todayScore * 100), fill: "#FF0000" }))
+            .then(user => setTodayScore({ value: (user.todayScore * 100 | user.score * 100), fill: "#FF0000" }))
 
         dataSource.getMainData()
             .then(user => setMacros({
@@ -63,7 +67,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
     }, [dataSource])
 
     return (
-        <UserMainDataContext.Provider value={{ profil, todayScore, macros, sessions, average, performance }}>
+        <UserMainDataContext.Provider value={{ userId, profil, todayScore, macros, sessions, average, performance }}>
             {children}
         </UserMainDataContext.Provider>
     )

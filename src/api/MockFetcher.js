@@ -13,7 +13,7 @@ export default class MockFetcher {
      */
     async getMainData() {
 
-        return USER_MAIN_DATA.find((element) => element.id === 12)
+        return USER_MAIN_DATA.find((element) => element.id === 12 | 18)
     }
     /**
      * Get user activity data.
@@ -25,7 +25,7 @@ export default class MockFetcher {
      */
     async getActivityData() {
 
-        return USER_ACTIVITY.find((element) => element.userId === 12)
+        return USER_ACTIVITY.find((element) => element.userId === 12 | 18)
     }
     /**
      * Get user sessions duration data.
@@ -37,7 +37,7 @@ export default class MockFetcher {
      */
     async getAverageSessionData() {
 
-        return USER_AVERAGE_SESSIONS.find((element) => element.userId === 12)
+        return USER_AVERAGE_SESSIONS.find((element) => element.userId === 12 | 18)
     }
     /**
      * Get user performance data.
@@ -49,7 +49,7 @@ export default class MockFetcher {
      */
     async getPerformanceData() {
 
-        return USER_PERFORMANCE.find((element) => element.userId === 12)
+        return USER_PERFORMANCE.find((element) => element.userId === 12 | 18)
     }
 }
 
