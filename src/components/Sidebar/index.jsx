@@ -1,11 +1,13 @@
-import './Sidebar.scss'
 import meditating from '../../assets/img/meditating.svg'
 import swimming from '../../assets/img/swimming.svg'
 import cycling from '../../assets/img/cycling.svg'
 import weightlifting from '../../assets/img/weightlifting.svg'
+import './Sidebar.scss'
+
 /**
- * Component for showing Sidebar.
- * @component
+ * A React component that renders the user's activity sidebar.
+ *
+ * @returns { JSX.Element } The JSX element for the user's activity sidebar.
  */
 function Sidebar() {
 

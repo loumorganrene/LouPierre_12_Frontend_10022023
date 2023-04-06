@@ -1,14 +1,16 @@
+import PropTypes from 'prop-types'
 import calorieIcon from "../../assets/icons/calories-icon.svg"
 import proteinIcon from "../../assets/icons/protein-icon.svg"
 import glucideIcon from "../../assets/icons/carbs-icon.svg"
 import lipidIcon from "../../assets/icons/fat-icon.svg"
 import '../UserMacros/UserMacros.scss'
-import PropTypes from 'prop-types'
 
 /**
- * Component for showing nutritional infos of the user.
- * @component
- * @param { object } macros - List of macronutrients.
+ * A React component that renders the user's daily calories and macronutrient cards.
+ *
+ * @param { Object } macros - The user's daily calories and macronutrient intake.
+ * @returns { JSX.Element } The JSX element for the user's daily calories and macronutrient cards.
+ * 
  * @example
  * const data = {calories: "1930", protein: "100", carbs: "300", lipid: "60"}
  * 

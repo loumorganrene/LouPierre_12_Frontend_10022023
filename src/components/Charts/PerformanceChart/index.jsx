@@ -1,10 +1,13 @@
-import '../PerformanceChart/Performance.scss'
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts'
 import PropTypes from 'prop-types'
+import '../PerformanceChart/Performance.scss'
+
 /**
- * Component for showing user's perfomance radar chart.
- * @component
- * @param { object } performance - List of informations about user's performances.
+ * A React component that renders a performance chart.
+ *
+ * @param { Array.<Object> } performance - The array of informations about user's performances.
+ * @returns { JSX.Element } The JSX element for the average session chart.
+ *
  * @example
  * const data = [
  * {value: 80, kind: "Cardio"},

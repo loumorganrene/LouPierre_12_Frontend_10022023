@@ -1,11 +1,11 @@
 /**
-* Represent a data fetcher from API.
-* @class
-* @classdesc This class represent a data fetcher from API.
-*/
+ * A class for fetching data from the API.
+ * @class
+ */
 export default class ApiFetcher {
     /**
      * Create a new ApiFetcher.
+     * @constructor
      * @param { number } userId - The user's id.
      */
     constructor(userId) {
@@ -15,8 +15,8 @@ export default class ApiFetcher {
     /**
      * Get user profil data.
      * @async
-     * @method getMainData
-     * @returns { Promise<object> } Promise object as a list of informations about user profil.
+     * @method
+     * @returns { Promise<object> } A Promise object that resolves to a list of informations about user profil.
      */
     async getMainData() {
         try {
@@ -34,8 +34,8 @@ export default class ApiFetcher {
     /**
      * Get user activity data.
      * @async
-     * @method getActivityData
-     * @returns { Promise<object> } Promise object as a list of informations about user metabolism.
+     * @method
+     * @returns { Promise<object> } A Promise object that resolves to a list of informations about user metabolism.
      */
     async getActivityData() {
         try {
@@ -53,8 +53,8 @@ export default class ApiFetcher {
     /**
      * Get user sessions duration data.
      * @async
-     * @method getAverageSessionData
-     * @returns { Promise<object> } Promise object as a list of informations about user sessions duration.
+     * @method
+     * @returns { Promise<object> } A Promise object that resolves to a list of informations about user sessions duration.
      */
     async getAverageSessionData() {
         try {
@@ -72,8 +72,8 @@ export default class ApiFetcher {
     /**
      * Get user performance data.
      * @async
-     * @method getPerformanceData
-     * @returns { Promise<object> } Promise object as a list of informations about user performances.
+     * @method
+     * @returns { Promise<object> } A Promise object that resolves to a list of informations about user performances.
      */
     async getPerformanceData() {
         try {
@@ -89,5 +89,3 @@ export default class ApiFetcher {
         }
     }
 }
-
-

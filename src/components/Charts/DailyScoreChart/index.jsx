@@ -1,14 +1,17 @@
-import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-import '../DailyScoreChart/DailyScore.scss'
+import { RadialBarChart, RadialBar, PolarAngleAxis, ResponsiveContainer } from 'recharts'
 import PropTypes from 'prop-types'
+import '../DailyScoreChart/DailyScore.scss'
+
 /**
- * Component for showing user's perfomance radar chart.
- * @component
- * @param { object } score - User's daily score and progression bar color hex code.
- * @example
- * const userScore = [{ score: 12, fill: "#FF0000" }]
+ * A React component that renders an user's daily score chart.
+ *
+ * @param { Object } score - The user's daily score and the score bar color.
+ * @returns { JSX.Element } The JSX element for the user's daily score chart.
  * 
- * <DailyScoreChart score = { userScore } />
+ * @example
+ * const data = [{ score: 12, fill: "#FF0000" }]
+ * 
+ * <DailyScoreChart score = { data } />
  */
 function DailyScoreChart({ score }) {
 

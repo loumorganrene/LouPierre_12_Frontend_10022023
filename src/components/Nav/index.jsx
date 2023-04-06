@@ -1,8 +1,10 @@
-import './Nav.scss'
 import logo from '../../assets/img/logo.svg'
+import './Nav.scss'
+
 /**
- * Component for showing navigation bar.
- * @component
+ * A React component that renders the navigation bar.
+ *
+ * @returns { JSX.Element } The JSX element for the navigation bar.
  */
 function Nav() {
 

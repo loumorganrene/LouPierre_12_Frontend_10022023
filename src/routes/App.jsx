@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 import { UserMainDataProvider } from '../context/UserMainData'
 import { useParams } from 'react-router-dom'
-import Dashboard from '../pages/Dashboard'
 import Nav from '../components/Nav'
 import Sidebar from '../components/Sidebar'
-import './App.scss'
+import Dashboard from '../pages/Dashboard'
 import ApiFetcher from '../api/ApiFetcher'
 import MockFetcher from '../api/MockFetcher'
+import './App.scss'
 
 function App() { 
   

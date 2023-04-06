@@ -1,18 +1,20 @@
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, } from 'recharts';
-import '../ActivityChart/ActivityChart.scss'
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis, } from 'recharts'
 import PropTypes from 'prop-types'
+import '../ActivityChart/ActivityChart.scss'
+
 /**
- * Component for showing the user's activity bar chart.
+ * A React component that renders a weekly activity chart.
  *
- * @component
- * @param {object} sessions - List of informations about user metabolism.
+ * @param { Array.<Object> } sessions - The array of informations about weekly user's metabolism.
+ * @returns { JSX.Element } The JSX element for the user's daily score chart.
+ * 
  * @example
- * const userActivity = [
+ * const data = [
  *   { date: "2020-07-01", day: 1, bodyweight: 80, calories: 240 },
  *   { date: "2020-07-02", day: 2, bodyweight: 80, calories: 220 }
  * ]
  *
- * <ActivityChart sessions={ userActivity } />
+ * <ActivityChart sessions={ data } />
  */
 function ActivityChart({ sessions }) {
 

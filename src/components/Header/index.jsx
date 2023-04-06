@@ -1,9 +1,12 @@
+import PropTypes from 'prop-types'
 import '../Header/Header.scss'
-import PropTypes from 'prop-types';
+
 /**
- * Component for showing user's welcome message.
- * @component
- * @param {string} username - User's first name.
+ * A React component that renders a customized welcome message.
+ *
+ * @param { string } username - The user's firstname.
+ * @returns { JSX.Element } The JSX element for the customized welcome message.
+ * 
  * @example
  * const user = { firstName: "Paul", lastName: "Petit", age: 23 }
  * 

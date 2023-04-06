@@ -1,10 +1,11 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError } from "react-router-dom"
 import ErrorImg from '../../assets/img/404.svg'
 import './Error.css'
 
 /**
- * Component for showing error message.
- * @component
+ * A React component that renders the error message.
+ *
+ * @returns { JSX.Element } The JSX element for the error message.
  */
 export default function ErrorPage() {
     const error = useRouteError();

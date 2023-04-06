@@ -6,16 +6,18 @@ import PerformanceChart from "../../components/Charts/PerformanceChart"
 import DailyScoreChart from "../../components/Charts/DailyScoreChart"
 import Header from "../../components/Header"
 import UserMacros from '../../components/UserMacros'
-import Error from '../../components/Error';
+import Error from '../../components/Error'
 import '../Dashboard/Dashboard.scss'
 
 /**
- * Component for showing Dashboard.
- * @component
+ * A React component that renders the user's dashboard.
+ *
+ * @returns { JSX.Element } The JSX element for the user's dashboard.
  */
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)
+    console.log(user)
 
     if (!user) {
         return <Error />
