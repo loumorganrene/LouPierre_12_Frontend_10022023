@@ -22,13 +22,12 @@ export default class ApiFetcher {
         try {
             const response = await fetch(`${this.BASE_URL}`)
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
+                throw new Error(`Fetching data failure, HTTP error! Status: ${response.status}`)
             }
             const data = await response.json()
             return data.data
         } catch (error) {
-            console.error(`Error fetching data: ${error}`)
-            return null
+            return Promise.reject(`${error}`)
         }
     }
     /**
@@ -41,13 +40,12 @@ export default class ApiFetcher {
         try {
             const response = await fetch(`${this.BASE_URL}/activity`)
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
+                throw new Error(`Fetching data failure, HTTP error! Status: ${response.status}`)
             }
             const data = await response.json()
             return data.data
         } catch (error) {
-            console.error(`Error fetching data: ${error}`)
-            return null
+            return Promise.reject(`${error}`)
         }
     }
     /**
@@ -60,13 +58,12 @@ export default class ApiFetcher {
         try {
             const response = await fetch(`${this.BASE_URL}/average-sessions`)
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
+                throw new Error(`Fetching data failure, HTTP error! Status: ${response.status}`)
             }
             const data = await response.json()
             return data.data
         } catch (error) {
-            console.error(`Error fetching data: ${error}`)
-            return null
+            return Promise.reject(`${error}`)
         }
     }
     /**
@@ -79,13 +76,12 @@ export default class ApiFetcher {
         try {
             const response = await fetch(`${this.BASE_URL}/performance`)
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`)
+                throw new Error(`Fetching data failure, HTTP error! Status: ${response.status}`)
             }
             const data = await response.json()
             return data.data
         } catch (error) {
-            console.error(`Error fetching data: ${error}`)
-            return null
+            return Promise.reject(`${error}`)
         }
     }
 }

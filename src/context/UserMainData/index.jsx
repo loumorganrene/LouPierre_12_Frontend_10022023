@@ -16,21 +16,18 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
 
     useEffect(() => {
         dataSource.getMainData()
-            .then(user => setUserId(user.id))
-
-        dataSource.getMainData()
-            .then(user => setProfil(user.userInfos))
-
-        dataSource.getMainData()
-            .then(user => setTodayScore({ value: (user.todayScore * 100 | user.score * 100), fill: "#FF0000" }))
-
-        dataSource.getMainData()
-            .then(user => setMacros({
-                "calories": user.keyData.calorieCount,
-                "protein": user.keyData.proteinCount,
-                "carbs": user.keyData.carbohydrateCount,
-                "lipid": user.keyData.lipidCount
-            }))
+            .then(user => {
+                setUserId(user.id)
+                setProfil(user.userInfos)
+                setTodayScore({ value: (user.todayScore * 100 | user.score * 100), fill: "#FF0000" })
+                setMacros({
+                    "calories": user.keyData.calorieCount,
+                    "protein": user.keyData.proteinCount,
+                    "carbs": user.keyData.carbohydrateCount,
+                    "lipid": user.keyData.lipidCount
+                })
+            })
+            .catch(console.error)
 
         dataSource.getActivityData()
             .then(user => setSessions(user.sessions.map((session, i) => ({
@@ -39,6 +36,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
                 "bodyweight": session.kilogram,
                 "calories": session.calories,
             }))))
+            .catch(console.error)
 
         dataSource.getAverageSessionData()
             .then(user => setAverage(() => {
@@ -48,6 +46,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
                     duration: session.sessionLength
                 }))
             }))
+            .catch(console.error)
 
         dataSource.getPerformanceData()
             .then(user => setPerformance(() => {
@@ -65,6 +64,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
                 }))
             })
             )
+            .catch(console.error)
 
     }, [dataSource])
 
