@@ -48,8 +48,8 @@ function AverageSessionChart({ averageSessions }) {
    * @returns {JSX.Element} The JSX element for the custom cursor.
    */
   function CustomCursor(props) {
-    const { points, width } = props; /* eslint-disable-line react/prop-types */
-    const { x, y } = points[0]; /* eslint-disable-line react/prop-types */
+    const { points, width } = props
+    const { x, y } = points[0]
     return (
       <Rectangle
         fill="#000"
@@ -59,7 +59,7 @@ function AverageSessionChart({ averageSessions }) {
         width={width}
         height={320}
       />
-    );
+    )
   }
 
   return (

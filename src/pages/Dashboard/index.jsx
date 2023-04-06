@@ -17,7 +17,6 @@ import '../Dashboard/Dashboard.scss'
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)
-    console.log(user)
 
     if (!user) {
         return <Error />
