@@ -6,13 +6,14 @@ import Error from "../src/components/Error";
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
+  Navigate,
   RouterProvider,
 } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Error />,
+    element: <Navigate to="/user/12" />,
     errorElement: <Error />,
   },
   {
