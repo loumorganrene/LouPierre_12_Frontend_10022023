@@ -12,6 +12,8 @@ Follow the installation instructions below.
 ## 2. Installing the backend
  For the frontend to be able to access the data, the backend will first need to be running. To install and run the backend, clone [this repo](https://github.com/loumorganrene/LouPierre_12_Backend) and follow the instructions from the **README**.
 
+⚠ ***Note:** The backend will run on port **3000**. To allow for both the backend and the frontend to run concurrently, the default backend port must be changed to port **3001**.*
+
 ## 3. Installing the frontend
 ### 3.1 Prerequisites
 - [Node.js (Version 16.17)](https://nodejs.org/en/)
@@ -28,5 +30,3 @@ Follow the installation instructions below.
 
 - `http://localhost:3000/user/12` - Retrieves user 12's main information.
 - `http://localhost:3000/user/18` - Retrieves user 18's main information.
-
-> ***Note:** The backend will run on port **3000**. To allow for both the backend and the frontend to run concurrently, the default React port has been changed to port **3001**.*

@@ -4,7 +4,7 @@ import '../ActivityChart/ActivityChart.scss'
 
 /**
  * A React component that renders a weekly activity chart.
- *
+ * 
  * @param { Array.<Object> } sessions - The array of informations about weekly user's metabolism.
  * @returns { JSX.Element } The JSX element for the user's daily score chart.
  * 
