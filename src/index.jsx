@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './routes/App';
-import Error from "../src/components/Error";
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './routes/App'
+import Error from "../src/components/Error"
+import reportWebVitals from './reportWebVitals'
 import {
   createBrowserRouter,
   Navigate,
@@ -14,12 +14,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Navigate to="/user/12" />,
-    errorElement: <Error />,
+    errorElement: <Error />
   },
   {
     path: "user/:userId",
-    element: <App />,
-    errorElement: <Error />,
+    element: <App />
   },
 ]);
 

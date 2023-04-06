@@ -6,7 +6,6 @@ import PerformanceChart from "../../components/Charts/PerformanceChart"
 import DailyScoreChart from "../../components/Charts/DailyScoreChart"
 import Header from "../../components/Header"
 import UserMacros from '../../components/UserMacros'
-import Error from '../../components/Error'
 import '../Dashboard/Dashboard.scss'
 
 /**
@@ -17,10 +16,6 @@ import '../Dashboard/Dashboard.scss'
 function Dashboard() {
 
     const user = useContext(UserMainDataContext)
-
-    if (!user) {
-        return <Error />
-    }
 
     return (
                 <section>

@@ -6,11 +6,20 @@ import Sidebar from '../components/Sidebar'
 import Dashboard from '../pages/Dashboard'
 import ApiFetcher from '../api/ApiFetcher'
 import MockFetcher from '../api/MockFetcher'
+import Error from '../components/Error'
 import './App.scss'
 
 function App() { 
   
+  const users = ['12', '18']
   const paramId = useParams()
+
+  if(!users.includes(paramId.userId)) {
+    return (
+    <div className='App'>
+      <Error />
+    </div> )
+  }
 
   return (
     <div className="App">

@@ -2,29 +2,30 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin: 0;
-    padding: 0;
     gap: 5rem;
     height: fit-content;
 
-    @media (max-width: 1199.98px) {
-        gap: 2rem;
+    .charts--container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5rem;
     }
-}
 
-.charts--container {
-    display: flex;
-    flex-direction: column;
-    row-gap: 5rem;
-    // width: fit-content;
-}
+    .charts--wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.charts--wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @media (max-width: 1199.98px) {
+        gap: 1rem;
 
-        @media (max-width: 1199.98px) {
-                max-width: 600px;
-            }
+        .charts--container {
+            row-gap: 2rem;
+        }
+
+        .charts--wrapper {
+            max-width: 600px;
+        }
+    }
 }

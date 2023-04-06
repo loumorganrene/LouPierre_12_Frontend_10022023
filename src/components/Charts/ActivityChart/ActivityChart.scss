@@ -4,7 +4,6 @@
     height: 368px;
     padding: 2rem;
     width: 60vw;
-    // max-width: 100%;
 
     .activity--label {
         font-size: min(1.2rem, 1.2vw);
@@ -16,6 +15,7 @@
     }
 
     @media (max-width: 1199.98px) {
+        height: 300px;
         max-width: 600px;
     }
 }

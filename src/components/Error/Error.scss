@@ -1,0 +1,35 @@
+.errorMsg {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    align-items: center;
+    color: var(--primary-clr);
+    padding: 0;
+
+    img {
+        max-width: 50%;
+        width: 60%;
+        margin: 10rem 0 1rem;
+    }
+
+    p {
+        margin: 0 1rem 5rem;
+        font-size: 1.4rem;
+        text-align: center;
+        color: grey;
+    }
+
+    @media (min-width: 1091px) {
+
+        margin: 2rem 8rem;
+
+        img {
+            margin: 10rem 0 5rem;
+        }
+
+        p {
+            margin: 0 0 5rem;
+            font-size: 2rem;
+        }
+    }
+}
