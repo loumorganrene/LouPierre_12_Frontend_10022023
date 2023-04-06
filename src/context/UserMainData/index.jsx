@@ -77,5 +77,10 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
 
 UserMainDataProvider.propTypes = {
     children: PropTypes.element.isRequired,
-    dataSource: PropTypes.shape().isRequired
+    dataSource: PropTypes.shape({
+        getMainData: PropTypes.func.isRequired,
+        getActivityData: PropTypes.func.isRequired,
+        getAverageSessionData: PropTypes.func.isRequired,
+        getPerformanceData: PropTypes.func.isRequired,
+    }).isRequired
 }

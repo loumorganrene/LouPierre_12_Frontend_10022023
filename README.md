@@ -12,13 +12,14 @@ Follow the installation instructions below.
 ## 2. Installing the backend
  For the frontend to be able to access the data, the backend will first need to be running. To install and run the backend, clone [this repo](https://github.com/loumorganrene/LouPierre_12_Backend) and follow the instructions from the **README**.
 
-⚠ ***Note:** The backend will run on port **3000**. To allow for both the backend and the frontend to run concurrently, the default backend port must be changed to port **3001**.*
+⚠ ***Note:** The backend will run on port **3000**. To allow for both the backend and the frontend to run correctly, the default backend port must be changed to port **3001**.*
 
 ## 3. Installing the frontend
 ### 3.1 Prerequisites
 - [Node.js (Version 16.17)](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/)
 - [React Router Dom](https://reactrouter.com/en/main)
+- *(Recommended IDE)* [VSCode](https://code.visualstudio.com/)
 
 ### 3.2 Launching the project
 1. Clone this repository.
