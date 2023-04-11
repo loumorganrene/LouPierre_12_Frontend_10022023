@@ -6,7 +6,7 @@ export const UserMainDataContext = createContext()
  * Data adaptator and provider for recharts API component
  */
 export const UserMainDataProvider = ({ children, dataSource }) => {
-    
+
     const [userId, setUserId] = useState(null)
     const [profil, setProfil] = useState(null)
     const [todayScore, setTodayScore] = useState(null)
@@ -20,7 +20,10 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
             .then(user => {
                 setUserId(user.id)
                 setProfil(user.userInfos)
-                setTodayScore({ value: (user.todayScore * 100 | user.score * 100), fill: "#FF0000" })
+                setTodayScore({
+                    value: (user.todayScore * 100 | user.score * 100),
+                    fill: "#FF0000"
+                })
                 setMacros({
                     "calories": user.keyData.calorieCount,
                     "protein": user.keyData.proteinCount,
@@ -67,7 +70,7 @@ export const UserMainDataProvider = ({ children, dataSource }) => {
             )
             .catch(console.error)
 
-    }, [dataSource])
+    }, [])
 
     return (
         <UserMainDataContext.Provider value={{ userId, profil, todayScore, macros, sessions, average, performance }}>

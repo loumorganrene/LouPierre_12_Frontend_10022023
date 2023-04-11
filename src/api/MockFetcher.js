@@ -8,7 +8,7 @@ export default class MockFetcher {
     /**
      * Create a new MockFetcher.
      * @constructor
-     * @param { number } userId - The user's id.
+     * @param { string } userId - The user's id.
      */
     constructor(userId) {
         this._userId = userId
@@ -21,7 +21,8 @@ export default class MockFetcher {
      */
     async getMainData() {
 
-        return USER_MAIN_DATA.find((element) => element.id === this._userId)
+        return USER_MAIN_DATA.find((element) => element.id.toString() === this._userId)
+  
     }
     /**
      * Get user activity data.
@@ -31,7 +32,7 @@ export default class MockFetcher {
      */
     async getActivityData() {
 
-        return USER_ACTIVITY.find((element) => element.userId === this._userId)
+        return USER_ACTIVITY.find((element) => element.userId.toString() === this._userId)
     }
     /**
      * Get user sessions duration data.
@@ -41,7 +42,7 @@ export default class MockFetcher {
      */
     async getAverageSessionData() {
 
-        return USER_AVERAGE_SESSIONS.find((element) => element.userId === this._userId)
+        return USER_AVERAGE_SESSIONS.find((element) => element.userId.toString() === this._userId)
     }
     /**
      * Get user performance data.
@@ -51,7 +52,7 @@ export default class MockFetcher {
      */
     async getPerformanceData() {
 
-        return USER_PERFORMANCE.find((element) => element.userId === this._userId)
+        return USER_PERFORMANCE.find((element) => element.userId.toString() === this._userId)
     }
 }
 
